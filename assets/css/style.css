@@ -1,0 +1,214 @@
+*{
+  --main-color: #AAC4FF;
+  --background-color: #EFEFEF;
+  --sonic-silver: #FAF4B7;
+  --indepedence: #FF7878;
+
+}
+
+body{
+  box-sizing: border-box; 
+  max-width: 100%;
+  font-family: 'Playfair Display', serif;
+  background-color: var(--background-color);
+  min-height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+footer{
+  padding: 1.5rem 0 0 0;
+  text-align: center;
+}
+
+img{
+  width: 100%;
+  height: auto;
+}
+
+a{
+  text-decoration: none;
+  color: #000;
+}
+
+/* HEADER */
+
+header{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem auto;
+  background-color: var(--main-color);
+}
+
+.site-name{
+  padding: 1.5rem;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #000;
+}
+.site-name:visited{
+  color: #000;
+}
+
+
+.nav-link-container{
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+}
+
+.nav-link{
+  list-style-type: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0 1.5rem;
+}
+
+/* MAIN */
+
+main{
+  text-align: center;
+}
+
+.discover-pokemon-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.pokemon-container{
+  text-align: center;
+  width: 300px;
+  padding: 0.5rem;
+  border: solid 2px var(--indepedence);
+  border-radius: 30px;
+}
+
+.pokemon-name{
+  text-transform: capitalize;
+  font-size: 2rem;
+}
+
+.visible {
+  display: block;
+}
+
+.invisible{
+  display: none;
+}
+
+.types-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 2rem;
+  justify-content: center;
+}
+.type-name-card{
+  border: 1px solid #000;
+  padding: 0.3rem 0.5rem;
+  border-radius: 30px;
+  margin: 0.5rem;
+  text-transform: uppercase;
+}
+
+.type-name{
+  border: 1px solid #000;
+  border-radius: 10px;
+  width: 130px;
+  padding: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.shadow-name{
+  text-shadow: var(--indepedence) 1px 0 15px;
+
+}
+
+/* TYPES */ 
+
+.normal{
+  background-color: #ADA594;
+}
+
+.fighting{
+  background-color: #A55239;
+}
+
+.flying {
+  background-color: #B55AA5;
+}
+
+.poison{
+  background-color: #E4F0F7;
+}
+
+.ground{
+  background-color: #D6B55A;
+}
+
+.rock{
+  background-color: #BDA55A;
+}
+
+.bug{
+  background-color: #A6B91A;
+}
+
+.ghost{
+  background-color: #6363B5;
+}
+
+.steel{
+  background-color: #ADADC6;
+}
+
+.fire{
+background-color: #F75231;
+}
+
+.water{
+  background-color: #399CFF;
+}
+
+.grass{
+  background-color: #7BCE52;
+}
+
+.electric{
+  background-color: #FFC631;
+}
+
+.psychic{
+  background-color: #FF73A5;
+}
+
+.ice{
+  background-color: #5ACEE7;
+}
+
+.dragon{
+  background-color: #8858F6;
+}
+
+.dark{
+  background-color: #735A4A;
+}
+
+.fairy{
+  background-color: #E09AE3;
+}
+
+.unknown{
+  background-color: #68A090;
+}
+
+.shadow{
+  background-color: #735A4A;
+}
