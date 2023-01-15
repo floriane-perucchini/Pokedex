@@ -1,6 +1,6 @@
 const allPokemons = {
   async init(){
-    allPokemons.getAllPokemon()
+    allPokemons.getAllPokemon();
   },
   apiEndPoint : 'https://pokeapi.co/api/v2/',
   async getAllPokemon(){

@@ -11,7 +11,7 @@
 <body>
 
   <header>
-        <a class="site-name" href="/front/index.html">
+        <a class="site-name" href="index.html">
         Pokédex          
         </a>
     <nav class="nav-bar">
@@ -28,6 +28,30 @@
     <div class="discover-pokemon-container">
       <!-- POKEMON ALEATOIRE * 5 -->
     </div>
+
+
+    <div class="modal-container">
+      <div class="modal">
+
+        <figure class="modal-img">
+          <img src="" alt="">
+        </figure>
+        <div class="modal-separator">
+          <p class="close-modal">Close</p>
+          <p class="modal-id">pokemon id</p>
+          <h2>Name</h2>
+          <p>Size : <span class="size"></span></p>
+          <p>Weight : <span class="weight"></span></p>
+          <div class="modal-type">
+            <input type="hidden" class="pokemon-type-id" >
+            <a href="types.html" class="type-name-card"></a>
+          </div>
+        </div>
+        
+        
+        
+      </div>
+    </div>
     
   </main>
   
@@ -35,18 +59,17 @@
 
   <template id="pokemon-card">
     <div class="pokemon-container">
-      <a href="pokemon.html">
+      <div class="open-modal">
         <img class="visible" src="" alt="pokemon-name">
         <img class="invisible" src="" alt="pokemon-name">
-
-      </a>
+      </div>
       <input type="hidden" class="pokemon-card-id" >
       <div class="type-container">
         <!-- TYPE CONTAINER -->
       </div>
-      <a href="pokemon.html">
+      <div class="open-modal">
         <h3 class="pokemon-name"></h3>
-      </a>
+      </div>
       
     </div>
   </template>
@@ -54,6 +77,7 @@
     <input type="hidden" class="pokemon-type-id" >
     <a href="types.html" class="type-name-card"></a>
   </template>
+
   <script src="./assets/js/pokemon.js"></script>
 </body>
 </html>

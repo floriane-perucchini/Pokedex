@@ -1,8 +1,20 @@
 const pokemons = {
   async init(){
-    const randomPok = await pokemons.getRandomPokemon();
+    const randomPok = pokemons.getRandomPokemon();
   },
   apiEndPoint : 'https://pokeapi.co/api/v2/',
+  addListener(){
+    const openModalButtons = document.querySelectorAll('.open-modal');
+    for(const button of openModalButtons){
+      button.addEventListener('click', pokemons.openModal)
+    };
+
+    const modal = document.querySelector('.modal-container')
+    const closeButtons = modal.querySelectorAll('.close-modal');
+    for(const close of closeButtons){
+      close.addEventListener('click', pokemons.closeModal);
+    }
+  },
   async getAllPokemon(){
     try{
       const response = await fetch(`${pokemons.apiEndPoint}pokemon?limit=150`)
@@ -61,7 +73,7 @@ const pokemons = {
 
     const addCard = document.querySelector('.discover-pokemon-container');
     addCard.appendChild(cardClone);
-    
+    pokemons.addListener();
     imageFront.addEventListener("mouseover", pokemons.seeBackImage)
     imageBack.addEventListener("mouseleave", pokemons.seeFrontImage)
     
@@ -106,6 +118,49 @@ const pokemons = {
     const container = imgToSee.closest('.pokemon-container')
     const name = container.querySelector('h3');
     name.classList.remove('shadow-name')
+  },
+  async openModal(event){
+    const pokemon = event.target.closest('div');
+    const modal = document.querySelector('.modal-container')
+    modal.classList.add('is-active');
+
+    const inputId = pokemon.nextElementSibling;
+    const pokemonId = inputId.dataset.pokemonId;
+
+    try {
+      const response = await fetch(`${pokemons.apiEndPoint}pokemon/${pokemonId}`);
+      const body = await response.json();
+      if (response.ok) {
+        const name = body.name;
+        const img = body.sprites.other.dream_world.front_default;
+        const types = body.types;
+        const height = body.height;
+        const weight = body.weight;
+
+        modal.querySelector('img').src = img;
+        modal.querySelector('img').alt = name;
+        modal.querySelector('.modal-id').textContent = pokemonId;
+        modal.querySelector('h2').textContent = name;
+        modal.querySelector('.size'). textContent = height;
+        modal.querySelector('.weight').textContent = weight;
+        console.log(body)
+
+        return body;
+      } else {
+        throw new Error(body.message);
+      }
+    } catch (error) {
+      alert('Ne fonctionne pas');
+      console.log(error)
+    }
+
+  },
+  closeModal(event){
+    const modal = document.querySelector('.modal-container');
+    modal.classList.remove('is-active');
+  },
+  addPokemonToModal(){
+
   }
 };
 
