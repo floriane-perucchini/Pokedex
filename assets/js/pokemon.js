@@ -120,12 +120,12 @@ const pokemons = {
     name.classList.remove('shadow-name')
   },
   async openModal(event){
-    const pokemon = event.target.closest('div');
+    console.log(event.target.closest('div').querySelector('.pokemon-card-id'))
     const modal = document.querySelector('.modal-container')
     modal.classList.add('is-active');
 
-    const inputId = pokemon.nextElementSibling;
-    const pokemonId = inputId.dataset.pokemonId;
+    const inputId = event.target.closest('div').querySelector('.pokemon-card-id');
+    const pokemonId = inputId.getAttribute('data-pokemon-id');
 
     try {
       const response = await fetch(`${pokemons.apiEndPoint}pokemon/${pokemonId}`);
@@ -134,15 +134,20 @@ const pokemons = {
         const name = body.name;
         const img = body.sprites.other.dream_world.front_default;
         const types = body.types;
-        const height = body.height;
-        const weight = body.weight;
+        for(let i = 0; i < types.length; i++){
+          const typeTemplate = document.querySelector('#type-sticker')
+          const typeClone = document.importNode(typeTemplate.content, true);
+          const types  = typeClone.querySelector('.type-name-card');
+          types.textContent = body.types[i].type.name;
+          types.classList.add(`${body.types[i].type.name}`)
+          const addTypes = document.querySelector('.modal-type');
+          addTypes.appendChild(types);
+        }
 
         modal.querySelector('img').src = img;
         modal.querySelector('img').alt = name;
         modal.querySelector('.modal-id').textContent = pokemonId;
         modal.querySelector('h2').textContent = name;
-        modal.querySelector('.size'). textContent = height;
-        modal.querySelector('.weight').textContent = weight;
         console.log(body)
 
         return body;
@@ -157,11 +162,10 @@ const pokemons = {
   },
   closeModal(event){
     const modal = document.querySelector('.modal-container');
+    const types = document.querySelector('.modal-type');
+    types.textContent = '';
     modal.classList.remove('is-active');
   },
-  addPokemonToModal(){
-
-  }
 };
 
 document.addEventListener('DOMContentLoaded', pokemons.init)

@@ -26,6 +26,21 @@
     <div class="discover-pokemon-container">
 
     </div>
+
+    <div class="modal-container">
+      <div class="modal">
+        <figure class="modal-img">
+          <img src="" alt="">
+        </figure>
+        <div class="modal-separator">
+          <p class="modal-id">pokemon id</p>
+          <h2 class="modal-name">Name</h2>
+          <div class="modal-type">
+          </div>
+        </div>
+        <button class="close-modal">X</button>        
+      </div>
+    </div>
     
   </main>
   
@@ -33,21 +48,20 @@
 
   <template id="pokemon-card">
     <div class="pokemon-container">
-      <a href="onePokemon.html">
+            <div class="open-modal">
         <img class="visible" src="" alt="pokemon-name">
         <img class="invisible" src="" alt="pokemon-name">
-
-      </a>
       <input type="hidden" class="pokemon-card-id" >
       <div class="type-container">
         <!-- TYPE CONTAINER -->
       </div>
-      <a href="onePokemon.html">
+
         <h3 class="pokemon-name"></h3>
-      </a>
-      
+      </div>
     </div>
   </template>
+
+  <!-- TYPE TEMPLATE -->
   <template id="type-sticker">
     <input type="hidden" class="pokemon-type-id" >
     <a href="types.html" class="type-name-card"></a>

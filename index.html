@@ -37,19 +37,12 @@
           <img src="" alt="">
         </figure>
         <div class="modal-separator">
-          <p class="close-modal">Close</p>
           <p class="modal-id">pokemon id</p>
-          <h2>Name</h2>
-          <p>Size : <span class="size"></span></p>
-          <p>Weight : <span class="weight"></span></p>
+          <h2 class="modal-name">Name</h2>
           <div class="modal-type">
-            <input type="hidden" class="pokemon-type-id" >
-            <a href="types.html" class="type-name-card"></a>
           </div>
         </div>
-        
-        
-        
+        <button class="close-modal">X</button>        
       </div>
     </div>
     
@@ -59,20 +52,21 @@
 
   <template id="pokemon-card">
     <div class="pokemon-container">
-      <div class="open-modal">
+      <div class="open-modal">      
         <img class="visible" src="" alt="pokemon-name">
         <img class="invisible" src="" alt="pokemon-name">
-      </div>
-      <input type="hidden" class="pokemon-card-id" >
-      <div class="type-container">
-        <!-- TYPE CONTAINER -->
-      </div>
-      <div class="open-modal">
+        <input type="hidden" class="pokemon-card-id" >
+        <div class="type-container">
+          <!-- TYPE CONTAINER -->
+        </div>
+
         <h3 class="pokemon-name"></h3>
       </div>
       
     </div>
   </template>
+
+  <!-- TYPE TEMPLATE -->
   <template id="type-sticker">
     <input type="hidden" class="pokemon-type-id" >
     <a href="types.html" class="type-name-card"></a>
