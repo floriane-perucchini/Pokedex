@@ -1,6 +1,6 @@
 # Pokedex
 
-[Trouve ton pokémon](https://https://pokedex-five-orcin.vercel.app/index.html)
+[Trouve ton pokémon](https://pokedex-five-orcin.vercel.app/index.html)
 
 - HTML / CSS
 - Javascript
